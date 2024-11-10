@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.13.0 on win32)" generated="2024-11-10T18:26:45.478093" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="C:\Users\Maurício\Documents\Automações\Autoforce\tests">
+<suite id="s1-s1" name="Regressao" source="C:\Users\Maurício\Documents\Automações\Autoforce\tests\regressao.robot">
+<test id="s1-s1-t1" name="1" line="6">
+<kw name="Acessar o site" owner="base" type="SETUP">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-11-10T18:26:45.636166" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\Maur\u00edcio\\Documents\\Automa\u00e7\u00f5es\\Autoforce\\logs\\20241110\\1\\browser\\traces\\fa549c0b-f7d1-46a5-a9c8-2929914f4814"}</msg>
+<msg time="2024-11-10T18:26:45.649338" level="INFO">Starting Browser process C:\Users\Maurício\AppData\Local\Programs\Python\Python313\Lib\site-packages\Browser\wrapper\index.js using port 52486</msg>
+<msg time="2024-11-10T18:26:45.649430" level="INFO">Node startup parameters: ['node', 'C:\\Users\\Maurício\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\Browser\\wrapper\\index.js', '52486']</msg>
+<msg time="2024-11-10T18:26:46.393460" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\Maurício\\Documents\\Automações\\Autoforce\\logs\\20241110\\1\\browser\\traces\\fa549c0b-f7d1-46a5-a9c8-2929914f4814"}</msg>
+<arg>browser=${BROWSER}</arg>
+<arg>headless=${HEADLESS}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-11-10T18:26:45.635608" elapsed="0.758038"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2024-11-10T18:26:46.394316" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": true,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2024-11-10T18:26:46.406073" level="INFO">Successfully created context. </msg>
+<msg time="2024-11-10T18:26:46.406152" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': True, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<arg>ignoreHTTPSErrors=True</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2024-11-10T18:26:46.393875" elapsed="0.012379"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-11-10T18:26:52.161110" level="INFO">Successfully initialized new page object and opened url: https://testes.autoforce.com.br/dealer-bmw-desafio/novos/z4-2022</msg>
+<arg>${HOME_PAGE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-11-10T18:26:46.406449" elapsed="5.754853"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-11-10T18:26:52.192017" level="INFO">Waited for Element with selector css=h1[class*=title] at state visible</msg>
+<arg>${Title_Page}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.161523" elapsed="0.030625"/>
+</kw>
+<status status="PASS" start="2024-11-10T18:26:45.635138" elapsed="6.557111"/>
+</kw>
+<kw name="Get JSON" owner="base">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-11-10T18:26:52.193020" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Maurício\Documents\Automações\Autoforce\resources\fixtures\massa_dados.json"&gt;C:\Users\Maurício\Documents\Automações\Autoforce\resources\fixtures\massa_dados.json&lt;/a&gt;'.</msg>
+<msg time="2024-11-10T18:26:52.193314" level="INFO">${arquivo} = {
+    "tc1":{
+        "name":  "Marlon",
+        "phone":  "11985621488",
+        "contact":  "whatsapping",
+        "vehicle":  "m40i",
+        "unit":  "AutoDealer Natal",
+        "change_vehicle": ...</msg>
+<var>${arquivo}</var>
+<arg>${EXECDIR}/resources/fixtures/${nome_arquivo}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.192873" elapsed="0.000465"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-10T18:26:52.193654" level="INFO">${super_var} = {'tc1': {'name': 'Marlon', 'phone': '11985621488', 'contact': 'whatsapping', 'vehicle': 'm40i', 'unit': 'AutoDealer Natal', 'change_vehicle': 'sim'}, 'tc2': {'name': 'Lara', 'phone': '11985621488', 'c...</msg>
+<var>${super_var}</var>
+<arg>json.loads($arquivo)</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.193426" elapsed="0.000259"/>
+</kw>
+<return>
+<value>${super_var}</value>
+<status status="PASS" start="2024-11-10T18:26:52.193746" elapsed="0.000058"/>
+</return>
+<msg time="2024-11-10T18:26:52.193923" level="INFO">${dados} = {'tc1': {'name': 'Marlon', 'phone': '11985621488', 'contact': 'whatsapping', 'vehicle': 'm40i', 'unit': 'AutoDealer Natal', 'change_vehicle': 'sim'}, 'tc2': {'name': 'Lara', 'phone': '11985621488', 'c...</msg>
+<var>${dados}</var>
+<arg>massa_dados.json</arg>
+<status status="PASS" start="2024-11-10T18:26:52.192585" elapsed="0.001359"/>
+</kw>
+<kw name="Preencher Formulario" owner="actions">
+<kw name="Run Process" owner="Process">
+<msg time="2024-11-10T18:26:52.194864" level="INFO">Starting process:
+python C:\Users\Maurício\Documents\Automações\Autoforce/resources/fixtures/create_email.py</msg>
+<msg time="2024-11-10T18:26:52.198240" level="INFO">Waiting for process to complete.</msg>
+<msg time="2024-11-10T18:26:52.232626" level="INFO">Process completed.</msg>
+<msg time="2024-11-10T18:26:52.232752" level="INFO">${email} = &lt;result object with rc 0&gt;</msg>
+<var>${email}</var>
+<arg>python</arg>
+<arg>${EXECDIR}/resources/fixtures/create_email.py</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.194721" elapsed="0.038058"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2024-11-10T18:26:52.233112" level="INFO">Starting process:
+python C:\Users\Maurício\Documents\Automações\Autoforce/resources/fixtures/create_cpf.py</msg>
+<msg time="2024-11-10T18:26:52.236419" level="INFO">Waiting for process to complete.</msg>
+<msg time="2024-11-10T18:26:52.261719" level="INFO">Process completed.</msg>
+<msg time="2024-11-10T18:26:52.261854" level="INFO">${cpf} = &lt;result object with rc 0&gt;</msg>
+<var>${cpf}</var>
+<arg>python</arg>
+<arg>${EXECDIR}/resources/fixtures/create_cpf.py</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.232939" elapsed="0.028941"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Selecionar modelo de veiculo" owner="actions">
+<kw name="Click" owner="Browser">
+<msg time="2024-11-10T18:26:52.262799" level="INFO">Clicks the element 'xpath=(//div[@class='form-conversion__body']//div[@class='choices']) [1]'.</msg>
+<arg>${Vehicle_Dropdown} [1]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.262506" elapsed="0.321078"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-11-10T18:26:52.584412" level="INFO">Fills the text 'm40i' in the given field.</msg>
+<arg>${Form_Type} ${Input_Vehicle}</arg>
+<arg>${dados["vehicle"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.583756" elapsed="0.011542"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-11-10T18:26:52.596391" level="INFO">Clicks the element 'css=.form-conversion__body div[data-value='m40i']'.</msg>
+<arg>${Form_Type} div[data-value='${dados["vehicle"]}']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.595628" elapsed="0.318700"/>
+</kw>
+<arg>${Form_Type}</arg>
+<arg>${dados}</arg>
+<status status="PASS" start="2024-11-10T18:26:52.262294" elapsed="0.652151"/>
+</kw>
+<arg>not ${Is_WhatsApp}</arg>
+<arg>Selecionar modelo de veiculo</arg>
+<arg>${Form_Type}</arg>
+<arg>${dados}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.262046" elapsed="0.652458"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-11-10T18:26:52.915388" level="INFO">Fills the text 'Marlon' in the given field.</msg>
+<arg>${Form_Type} ${Input_Name}</arg>
+<arg>${dados["name"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.914638" elapsed="0.009251"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-11-10T18:26:52.924768" level="INFO">Fills the text '43792248fjz8gg@testautoforce.com' in the given field.</msg>
+<arg>${Form_Type} ${Input_Email}</arg>
+<arg>${email.stdout}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.924052" elapsed="0.027784"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-11-10T18:26:52.952769" level="INFO">Fills the text '11985621488' in the given field.</msg>
+<arg>${Form_Type} ${Input_Phone}</arg>
+<arg>${dados["phone"]}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:52.952027" elapsed="0.056506"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-11-10T18:26:53.009526" level="INFO">Fills the text '884.343.312-17' in the given field.</msg>
+<arg>${Form_Type} ${Input_Cpf}</arg>
+<arg>${cpf.stdout}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.008733" elapsed="0.031826"/>
+</kw>
+<kw name="Check Checkbox" owner="Browser">
+<arg>${Form_Type} input[name="${dados["contact"]}"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.040763" elapsed="0.080499"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Selecionar veiculo na troca" owner="actions">
+<kw name="Click" owner="Browser">
+<msg time="2024-11-10T18:26:53.122657" level="INFO">Clicks the element 'css=.form-conversion__body div[class*=custom-check--radio] input[value='sim']'.</msg>
+<arg>${Form_Type} ${Change_Vehicle} input[value='${dados["change_vehicle"]}']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.121974" elapsed="0.109397"/>
+</kw>
+<kw name="Check Checkbox" owner="Browser">
+<arg>${Form_Type} input[name="${dados["contact"]}"]</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Checks the checkbox or selects radio button found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.231558" elapsed="0.008756"/>
+</kw>
+<arg>${Form_Type}</arg>
+<arg>${dados}</arg>
+<status status="PASS" start="2024-11-10T18:26:53.121729" elapsed="0.118668"/>
+</kw>
+<arg>not ${Is_WhatsApp}</arg>
+<arg>Selecionar veiculo na troca</arg>
+<arg>${Form_Type}</arg>
+<arg>${dados}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.121460" elapsed="0.118984"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-11-10T18:26:53.240830" level="INFO">Clicks the element 'css=.form-conversion__body button &gt;&gt; text="ESTOU INTERESSADO"'.</msg>
+<arg>${Form_Type} ${Submit_Button}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.240545" elapsed="0.068584"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${Is_WhatsApp}</arg>
+<arg>Verificar Navegacao WhatsApp</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.309336" elapsed="0.000184"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-11-10T18:26:55.635275" level="INFO">Waited for Element with selector xpath=//div[@class='form-conversion__body']//..//div[text()='Solicitação realizada com sucesso!'] at state visible</msg>
+<arg>${Wait_Element}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-11-10T18:26:53.309625" elapsed="2.325816"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Fechar Modal" owner="actions">
+<kw name="Click" owner="Browser">
+<msg time="2024-11-10T18:26:55.636388" level="INFO">Clicks the element 'xpath=//div[@class='form-conversion__body']//..//a[text()='Fechar']'.</msg>
+<arg>${Button_close_Modal}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-11-10T18:26:55.636073" elapsed="0.379776"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2024-11-10T18:26:56.851292" level="INFO">Waited for Element with selector xpath=//div[@class='form-conversion__body']//..//div[text()='Solicitação realizada com sucesso!'] at state hidden</msg>
+<arg>${Success_Message}</arg>
+<arg>hidden</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2024-11-10T18:26:56.016018" elapsed="0.835404"/>
+</kw>
+<status status="PASS" start="2024-11-10T18:26:55.635884" elapsed="1.215623"/>
+</kw>
+<arg>not ${Is_WhatsApp}</arg>
+<arg>Fechar Modal</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-10T18:26:55.635621" elapsed="1.215927"/>
+</kw>
+<arg>${Lead_Form_Body}</arg>
+<arg>${dados["tc1"]}</arg>
+<arg>${Lead_Conversion_Button}</arg>
+<arg>${Success_Message}</arg>
+<arg>Is_WhatsApp=False</arg>
+<status status="PASS" start="2024-11-10T18:26:52.194160" elapsed="4.657434"/>
+</kw>
+<kw name="Encerrar teste" owner="base" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" owner="BuiltIn">
+<arg>Take Screenshot</arg>
+<arg>embed</arg>
+<arg>fullPage=True</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" start="2024-11-10T18:26:56.852148" elapsed="0.000077"/>
+</kw>
+<kw name="Close Browser" owner="Browser">
+<msg time="2024-11-10T18:26:56.991514" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-10T18:26:56.852309" elapsed="0.139349"/>
+</kw>
+<status status="PASS" start="2024-11-10T18:26:56.851909" elapsed="0.139844"/>
+</kw>
+<tag>001 - Validar envio do formulário de lead e exibição de mensagem de confirmação após envio bem-sucedido.</tag>
+<status status="PASS" start="2024-11-10T18:26:45.634645" elapsed="11.357263"/>
+</test>
+<status status="PASS" start="2024-11-10T18:26:45.500281" elapsed="11.511049"/>
+</suite>
+<status status="PASS" start="2024-11-10T18:26:45.479118" elapsed="11.550179"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">001 - Validar envio do formulário de lead e exibição de mensagem de confirmação após envio bem-sucedido.</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Regressao">Tests.Regressao</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

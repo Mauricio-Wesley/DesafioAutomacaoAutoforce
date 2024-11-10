@@ -1,0 +1,18 @@
+{
+    "tc1":{
+        "name":  "Marlon",
+        "phone":  "11985621488",
+        "contact":  "whatsapping",
+        "vehicle":  "m40i",
+        "unit":  "AutoDealer Natal",
+        "change_vehicle":  "sim"
+    },
+    "tc2":{
+        "name":  "Lara",
+        "phone":  "11985621488",
+        "contact":  "phoning",
+        "vehicle":  "m40i",
+        "unit":  "AutoDealer Natal",
+        "change_vehicle":  "nao"
+    }
+}
