@@ -17,7 +17,7 @@ ${Input_Vehicle}                                 input[class='choices__input cho
 ${Vehicle_Dropdown}                              xpath=(//div[@class='form-conversion__body']//div[@class='choices'])
 ${Success_Message}                               xpath=//div[@class='form-conversion__body']//..//div[text()='Solicitação realizada com sucesso!']
 ${Button_close_Modal}                            xpath=//div[@class='form-conversion__body']//..//a[text()='Fechar']
-${Select_Unit}                                   xpath=//label[text()='Escolha a unidade:']/..//div[@class='choices']
+${Select_Unit}                                   [text()='Escolha a unidade:']/..//div[@class='choices']
 ${Option_Unit}                                   xpath=//div[@class='choices__list choices__list--dropdown is-active']//div[@role='option'][contains(.,'
 ${Change_Vehicle}                                div[class*=custom-check--radio]
 ${Button_Whataspp}                               id=new-vehicles-showcase_cta-box-button

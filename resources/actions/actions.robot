@@ -11,7 +11,7 @@ Preencher Formulario
     Fill Text                                    ${Form_Type} ${Input_Email}             ${email.stdout}   
     Fill Text                                    ${Form_Type} ${Input_Phone}             ${dados["phone"]} 
     Fill Text                                    ${Form_Type} ${Input_Cpf}               ${cpf.stdout}     
-    Run Keyword If                               not ${Is_WhatsApp}                      Selecionar unidade                                          ${Form_Type}                  ${dados}
+    Selecionar unidade                           ${Is_WhatsApp}                          ${dados}
     Check Checkbox                               ${Form_Type} input[name="${dados["contact"]}"]
     Run Keyword If                               not ${Is_WhatsApp}                      Selecionar veiculo na troca                                 ${Form_Type}                  ${dados}
     Click                                        ${Form_Type} ${Submit_Button}
@@ -24,8 +24,12 @@ Selecionar modelo de veiculo
     Fill Text                                    ${Form_Type} ${Input_Vehicle}   ${dados["vehicle"]}
     Click                                        ${Form_Type} div[data-value='${dados["vehicle"]}']
 Selecionar unidade
-    [Arguments]                                  ${Form_Type}                            ${dados}
-    Click                                        ${Select_Unit}
+    [Arguments]                                  ${Is_WhatsApp}                          ${dados}
+    IF  ${Is_WhatsApp} == True
+        Click                                    xpath=//legend${Select_Unit}                         
+    ELSE
+        Click                                    xpath=//label${Select_Unit} 
+    END
     Click                                        ${Option_Unit}${dados["unit"]}')]
 Selecionar veiculo na troca
     [Arguments]                                  ${Form_Type}                            ${dados}
