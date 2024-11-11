@@ -8,7 +8,7 @@ Resource                                         actions/actions.robot
 Resource                                         dictionary/dictionary.robot
 *** Variables ***
 ${BROWSER}                                       chromium
-${HEADLESS}                                      ${True}
+${HEADLESS}                                      ${False}
 ${HOME_PAGE}                                     https://testes.autoforce.com.br/dealer-bmw-desafio/novos/z4-2022
 * Keywords *
 Acessar o site
